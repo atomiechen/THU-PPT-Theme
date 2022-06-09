@@ -1,6 +1,6 @@
 # 清华简约主题PPT模板
 
-PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢迎大家推广传播本repo（https://github.com/atomiechen/THU-PPT-Theme），也欢迎大家贡献一些变体pr进来，提供更多选择🤠
+PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢迎大家推广传播本repo（[https://github.com/atomiechen/THU-PPT-Theme](https://github.com/atomiechen/THU-PPT-Theme)），也欢迎大家贡献一些变体pr进来，提供更多选择🤠
 
 
 

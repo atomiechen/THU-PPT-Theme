@@ -1,6 +1,6 @@
 # 清华简约主题PPT模板
 
-PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢迎大家推广传播本repo（[https://github.com/atomiechen/THU-PPT-Theme](https://github.com/atomiechen/THU-PPT-Theme)），也欢迎大家贡献一些变体pr进来，提供更多选择🤠
+PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢迎大家推广传播本repo（[https://github.com/atomiechen/THU-PPT-Theme](https://github.com/atomiechen/THU-PPT-Theme)），也欢迎大家贡献[变体](variants/README.md)，提供更多选择🤠
 
 
 
@@ -38,6 +38,10 @@ PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢�
 
 
 
+其他变体设计参见 [variants/README.md](variants/README.md)。
+
+
+
 ## 使用方式
 
 可以基于所提供的文件自行修改内容，也可以在新建的PPT文稿中应用该模板。
@@ -50,9 +54,6 @@ PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢�
 
 
 
-## misc
+## License
 
-欢迎大家推广使用、改进，也欢迎有兴趣有想法的朋友们commit，提供更多有趣的设计！
-
-邮箱：atomic_cwh@163.com
-
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/atomiechen/THU-PPT-Theme">THU-PPT-Theme</a> © 2020 by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/atomiechen">Atomie CHEN</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>

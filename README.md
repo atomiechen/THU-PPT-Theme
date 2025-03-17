@@ -1,8 +1,9 @@
+> [!NOTE]
+> 每到答辩季我就会喜获stars，谢谢大家的支持！欢迎推广传播本repo（[https://github.com/atomiechen/THU-PPT-Theme](https://github.com/atomiechen/THU-PPT-Theme)），也欢迎贡献[变体](variants/README.md)，提供更多选择🤠
+
 # 清华简约主题PPT模板
 
-PS：我发现每到答辩季就会喜获一些star，谢谢大家支持！欢迎大家推广传播本repo（[https://github.com/atomiechen/THU-PPT-Theme](https://github.com/atomiechen/THU-PPT-Theme)），也欢迎大家贡献[变体](variants/README.md)，提供更多选择🤠
-
-
+[![GitHub Repo stars](https://img.shields.io/github/stars/atomiechen/THU-PPT-Theme?style=for-the-badge&logo=github&label=THU-PPT-Theme)](https://github.com/atomiechen/THU-PPT-Theme)
 
 2020年春夏之交，答辩期间很多同学都在寻找清华主题的答辩模板。一方面有使用LaTeX制作Beamer的模板（见Overleaf上的模板[THU Beamer Theme](https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb)），另一方面民间也存在着一些PPT模板。很多人可能不适应Beamer的使用（主要是内容和排版设计不是可见即所得，定制有门槛），以及我找到的PPT模板也都不太好使（要么图案设计太复杂、不好看，要么没有制作成PPT母版导致每次使用都要复制粘贴+微调，不方便）。
 

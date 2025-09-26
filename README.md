@@ -15,6 +15,7 @@
 
 模板均为pptx文件。
 
+- 2025-09：添加转换脚本，可将模板转换为 Pandoc 兼容的PPT模板
 - 2022-06重要更新：将所有浅色背景模板，全部按照《清华大学视觉形象识别系统手册》更正清华主题色，并采用矢量校徽校名图
   - V3白底变体16:9，留边和顶边都采用白色背景
 
@@ -52,6 +53,27 @@
 ![image-20200609202001002](pic/select_from_design.jpg)
 
 本模板通过编辑幻灯片母版来设计制作。如需定制，可自行编辑幻灯片母版。
+
+
+
+## Pandoc 支持
+
+可以将本仓库某模板作为 Pandoc 的 PPTX 模板使用，但前提是先跑转换脚本，将文件中母版中所有版式（layout）中文名改为 [Pandoc 支持的英文名](https://pandoc.org/demo/example33/10.1-structuring-the-slide-show.html#powerpoint-layout-choice)：
+
+```sh
+# 运行前需先安装依赖
+pip install python-pptx
+```
+
+```sh
+# 将某模板转换为 Pandoc 兼容的模板
+python3 layouts.py rename "v3顶边白底16-9.pptx" template.pptx
+```
+
+```sh
+# 运行 Pandoc，例如
+pandoc input.md -t pptx -o output.pptx --reference-doc=template.pptx
+```
 
 
 

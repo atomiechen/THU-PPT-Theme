@@ -9,21 +9,19 @@
 
 我制作了清华简约主题的PPT模板，后续有新的设计我会逐渐加入，也欢迎有兴趣有想法的朋友们添砖加瓦！
 
+## 内容
+
+所有模板均为 `.pptx` 文件。
+此外也提供转换脚本用于 [Pandoc自动生成PPTX](#pandoc-支持)。
+
+各个版本的修改历史见 [CHANGELOG.md](CHANGELOG.md)。
 
 
-## 如数家珍
+## 下载
 
-模板均为pptx文件。
+推荐直接从 [GitHub Releases](https://github.com/atomiechen/THU-PPT-Theme/releases) 下载[最新发布版](https://github.com/atomiechen/THU-PPT-Theme/releases/latest)。
 
-- 2025-09：添加转换脚本，可将模板转换为 Pandoc 兼容的PPT模板
-- 2022-06重要更新：将所有浅色背景模板，全部按照《清华大学视觉形象识别系统手册》更正清华主题色，并采用矢量校徽校名图
-  - V3白底变体16:9，留边和顶边都采用白色背景
-
-- 2021-11：V2扁平16:9
-  - 基于扁平风格优化，设计成一致的直角元素，删去了多余图案；取消了所有标题英文格式的默认全大写。
-- 2020-06（原始）：留边、顶边、扁平和暗光四种风格，每种风格有4:3和16:9两种比例
-  - 其中使用了清华紫颜色、校徽图案、含校徽的校名图案及清华标志性建筑图案，设计参考了一些既有的清华主题模板。
-
+也可以在 [Github 仓库](https://github.com/atomiechen/THU-PPT-Theme) 单独下载所需文件。
 
 
 ## 效果
@@ -48,7 +46,7 @@
 
 可以基于所提供的文件自行修改内容，也可以在新建的PPT文稿中应用该模板。
 
-后者在MS Office 2019 For Mac的PowerPoint里的具体使用方式为：首先选择幻灯片尺寸为16:9或4:3→点击设计→打开下拉菜单→点击浏览主题→选择你想使用的模板文件。
+后者在 MS Office 2019 For Mac 的 PowerPoint 里的具体使用方式为：首先选择幻灯片尺寸为16:9或4:3→点击设计→打开下拉菜单→点击浏览主题→选择你想使用的模板文件。
 
 ![image-20200609202001002](pic/select_from_design.jpg)
 
@@ -79,4 +77,4 @@ pandoc input.md -t pptx -o output.pptx --reference-doc=template.pptx
 
 ## License
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/atomiechen/THU-PPT-Theme">THU-PPT-Theme</a> © 2020 by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/atomiechen">Atomie CHEN</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/atomiechen/THU-PPT-Theme">THU-PPT-Theme</a> © 2020 by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/atomiechen">Atomie CHEN</a> under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> CC BY-NC-SA 4.0 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>

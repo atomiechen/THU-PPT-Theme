@@ -1,2 +1,13 @@
-pic/demo.pptx export-ignore
-.git* export-ignore
+# Exclude files from the generated tarball
+
+# .gitignore and similar
+.git*           export-ignore
+
+# CI configurations
+.github         export-ignore
+
+# vscode settings
+.vscode         export-ignore
+
+# Demo presentation
+pic/demo.pptx   export-ignore

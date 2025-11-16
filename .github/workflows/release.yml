@@ -1,0 +1,126 @@
+name: Github Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      use_changelog:
+        type: boolean
+        default: true
+        description: Extract release notes from CHANGELOG.md
+      changelog_file:
+        type: string
+        default: CHANGELOG.md
+        description: Path to changelog file
+        required: false
+      release_tag:
+        type: string
+        description: Tag to package (empty for latest tag)
+        required: false
+
+jobs:
+  build:
+    name: Build package
+    runs-on: ubuntu-latest
+    outputs:
+      release_tag: ${{ steps.set_release_tag.outputs.tag }}
+      repo_name: ${{ steps.get_repo_name.outputs.repo_name }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch all tags
+        run: |
+          git fetch --prune --unshallow --tags
+      - name: Verify and set release tag
+        id: set_release_tag
+        run: |
+          release_tag=${{ inputs.release_tag }}
+          if [ -z "$release_tag" ]; then
+            echo "Input tag is empty. Fetching latest tag."
+            release_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
+            if [ -z "$release_tag" ]; then
+              echo "No latest tag available. Exiting workflow."
+              exit 1
+            fi
+          else
+            if ! git rev-parse -q --verify "refs/tags/$release_tag" >/dev/null; then
+              echo "Invalid tag '$release_tag'. Exiting workflow."
+              exit 1
+            fi
+          fi
+          echo "tag=$release_tag" >> $GITHUB_OUTPUT
+      - name: Checkout to latest tag
+        run: git checkout ${{ steps.set_release_tag.outputs.tag }}
+
+      - name: Get repository name
+        id: get_repo_name
+        run: |
+          repo_full_name=${{ github.repository }}
+          repo_name=${repo_full_name#*/}
+          echo "repo_name=$repo_name" >> $GITHUB_OUTPUT
+
+      - name: Package source code
+        id: package
+        run: |
+          zip_filename="${{ steps.get_repo_name.outputs.repo_name }}-${{ steps.set_release_tag.outputs.tag }}.zip"
+          git archive --format zip --output "$zip_filename" HEAD
+          echo "zip_filename=$zip_filename" >> $GITHUB_OUTPUT
+
+      - name: Upload packaged zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-asset
+          path: ${{ steps.package.outputs.zip_filename }}
+
+      - name: Store the changelog file
+        if: ${{ inputs.use_changelog }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: changelog
+          path: ${{ inputs.changelog_file }}
+
+  github-release:
+    name: Upload to GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write  # IMPORTANT: mandatory for making GitHub Releases
+      id-token: write  # IMPORTANT: mandatory for sigstore
+
+    steps:
+    - name: Download packaged artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: release-asset
+        path: assets/
+    - name: Sign the package with Sigstore
+      uses: sigstore/gh-action-sigstore-python@v3.0.0
+      with:
+        inputs: >-
+          ./assets/*.zip
+    - name: Download the changelog file
+      if: ${{ inputs.use_changelog }}
+      uses: actions/download-artifact@v4
+      with:
+        name: changelog
+    - name: Extract release notes
+      if: ${{ inputs.use_changelog }}
+      id: extract-release-notes
+      uses: ffurrer2/extract-release-notes@v2
+      with:
+        changelog_file: ${{ inputs.changelog_file }}
+    - name: Create GitHub Release 📦
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          assets/**
+        tag_name: ${{ needs.build.outputs.release_tag }}
+        name: ${{ needs.build.outputs.repo_name }} ${{ needs.build.outputs.release_tag }}
+        body: |
+          ${{ steps.extract-release-notes.outputs.release_notes }}
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}
